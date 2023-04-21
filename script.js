@@ -31,7 +31,7 @@ let looserLaws = 0;
 let districtExpansion = 0;
 let moreBooths = 0;
 
-let patch = "v1.1.0";
+let patch = "v1.1.1";
 
 
 
