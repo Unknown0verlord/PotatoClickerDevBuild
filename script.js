@@ -31,7 +31,7 @@ let looserLaws = 0;
 let districtExpansion = 0;
 let moreBooths = 0;
 
-let patch = "v1.1.1";
+let patch = "v1.1.2";
 
 
 
@@ -87,7 +87,7 @@ setInterval(() => {
 }, 60000)
 
 // Check Version every minute
-setInterval(() => {checkVersion();}, 60000)
+// setInterval(() => {checkVersion();}, 60000)
 
 // Most Important Functions
 // checkUpgrades() updates button color when player has enough potatoes, checking every 1/4 second
@@ -447,6 +447,8 @@ function setSessionVariables(number) {
             document.getElementById("saveText").innerHTML = "";
         }, 3000);
     }
+
+    checkVersion();
     
 }
 
@@ -547,6 +549,8 @@ function checkVersion() {
         console.log("Running version " + patch);
         if (patch != responseObj.version) {
             document.getElementById("patchCheck").innerHTML = "Your Version of Potato Clicker is out of date. Consider Saving and Reloading the Page."
+        } else {
+            document.getElementById("patchCheck").innerHTML = ""
         }
     }
 }
