@@ -1,25 +1,3 @@
-import { Octokit } from "octokit";
-
-const octokit = new Octokit({
-    auth: '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'
-})
-
-
-try {
-    const result = await octokit.request("GET /repos/{owner}/{repo}/issues", {
-    owner: "octocat",
-    repo: "Spoon-Knife",
-    per_page: 2,
-});
-  
-    const titleAndAuthor = result.data.map(issue => {title: issue.title; authorID: issue.user.id})
-  
-    console.log(titleAndAuthor)
-  
-  } catch (error) {
-    console.log(`Error! Status: ${error.status}. Message: ${error.response.data.message}`)
-  }
-
 let potatoes = 0;
 let potatoUp = 1;
 let PpS = 0;
@@ -66,8 +44,6 @@ let moreBooths = 0;
 //     "factory": factory,
 //     "factoryCost": factoryCost
 // }
-
-console.log(HttpRequest("localhost:3000/patch", method="get"));
 
 
 // "Make a Potato!" button  calls this
@@ -552,4 +528,24 @@ function deleteData() {
 
 
 
+import { Octokit } from "octokit";
 
+const octokit = new Octokit({
+    auth: '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'
+})
+
+
+try {
+    const result = await octokit.request("GET /repos/{owner}/{repo}/issues", {
+    owner: "octocat",
+    repo: "Spoon-Knife",
+    per_page: 2,
+});
+  
+    const titleAndAuthor = result.data.map(issue => {title: issue.title; authorID: issue.user.id})
+  
+    console.log(titleAndAuthor)
+  
+  } catch (error) {
+    console.log(`Error! Status: ${error.status}. Message: ${error.response.data.message}`)
+  }
